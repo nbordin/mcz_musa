@@ -40,6 +40,7 @@ def on_message(
     command = commands.get_mcz_command(command) if command else None
     if not command:
         log.info("Unknown command received")
+        return
     COMMAND_QUEUE.put((command, value))
 
 
